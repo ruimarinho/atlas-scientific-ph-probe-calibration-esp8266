@@ -10,7 +10,7 @@ The following instructions are based on the EZO™ PH circuit connected to a [LO
 
 1. Connect VCC on the EZO circuit to the 5V pin on the Wemos and the GND pin on the EZO circuit to the GND pin on the Wemos.
 
-2. Connect RX on the EZO circuit to the RX pin on the Wemos (hardware RX).
+2. Connect RX on the EZO circuit to the D6 pin on the Wemos (GPIO 12).
 
 3. Connect TX on the EZO circuit to the D7 on the Wemos (GPIO 13).
 
@@ -25,10 +25,12 @@ The following instructions are based on the EZO™ PH circuit connected to a [LO
 6. Enter serial monitor:
 
     ```
-    pio device monitor --eol CR
+    pio device monitor --baud=9600
     ```
 
     Then select the appropriate device from the list.
+
+    **Note**: the sketch is expecting to see `\n` to detect end of line to issue the command. This works great on macOS. If you're having problems, try manually setting the flag `--eol CR`.
 
 By default, the EZO pH circuit is in continuous read mode and reports one reading per second.
 
