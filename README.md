@@ -1,6 +1,6 @@
-# Atlas Scientific pH Probe Calibration
+# Atlas Scientific pH Probe Calibration for ESP8266
 
-This project consists of a basic Arduino sketch via [PlatformIO](https://platformio.org) for [Atlas Scientific pH Probes](https://atlas-scientific.com/probes/) which provides interactive UART support to perform tasks such as calibration or setting a temperature offset on the [EZO™ pH circuit](https://atlas-scientific.com/circuits/ezo-ph-circuit/).
+This project consists of a basic ESP8266 program for calibrating [Atlas Scientific pH Probes](https://atlas-scientific.com/probes/) interactively using the [EZO™ pH circuit](https://atlas-scientific.com/circuits/ezo-ph-circuit/).
 
 ## Usage
 
