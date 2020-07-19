@@ -1,26 +1,18 @@
-//This code was written to be easy to understand.
-//Modify this code as you see fit.
-//This code will output data to the Arduino serial monitor.
-//Type commands into the Arduino serial monitor to control the pH circuit.
-//This code was written in the Arduino 1.8.3 IDE
-//An Arduino UNO was used to test this code.
-//This code was last tested 6/2017
+// Based on Atlas Scientific Arduino Uno pH Sample Code.
+// Source: https://www.atlas-scientific.com/files/Arduino-Uno-pH-sample-code.pdf
 
 
-#include <SoftwareSerial.h>                           //we have to include the SoftwareSerial library, or else we can't use it
-#define rx 13                                         //define what pin rx is going to be (D7)
-#define tx 15                                         //define what pin tx is going to be (D8)
+#include <SoftwareSerial.h>
+#define rx 13                                         // GPIO13 (D7)
+#define tx 15                                         // GPIO15 (D8)
 
-SoftwareSerial myserial(rx, tx);                      //define how the soft serial port is going to work
+SoftwareSerial myserial(rx, tx)
 
-
-String inputstring = "";                              //a string to hold incoming data from the PC
-String sensorstring = "";                             //a string to hold the data from the Atlas Scientific product
-boolean input_string_complete = false;                //have we received all the data from the PC
-boolean sensor_string_complete = false;               //have we received all the data from the Atlas Scientific product
-float pH;                                             //used to hold a floating point number that is the pH
-
-
+String inputstring = "";
+String sensorstring = "";
+boolean input_string_complete = false;
+boolean sensor_string_complete = false;
+float pH;
 
 void setup() {                                        //set up the hardware
   Serial.begin(9600);                                 //set baud rate for the hardware serial port_0 to 9600
